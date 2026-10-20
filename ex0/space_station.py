@@ -8,7 +8,7 @@ class SpaceStation(BaseModel):
     crew_size: int = Field(..., ge=1, le=20)
     power_level: float = Field(..., ge=0.0, le=100.0)
     oxygen_level: float = Field(..., ge=0.0, le=100.0)
-    last_maintenance: datetime
+    last_maintenance: datetime = Field(...)
     is_operational: bool = Field(default=True)
     notes: str | None = Field(default=None, max_length=200)
 
